@@ -24,8 +24,9 @@
         
         if (isset($_GET["keuze"])) {
             if (is_numeric($_GET["keuze"]) && $_GET["keuze"] > 0 && $_GET["keuze"] <= 3) {
-                setcookie("keuzekoekjes", $_GET["keuze"], time()+3600);
-                echo "#". $_COOKIE["keuzekoekjes"];
+                $_SESSION["dingie"] = $_GET["keuze"];
+                echo "gekozen item: #".$_SESSION["dingie"];
+
             } 
             else {
                 echo " voer een van de bovenstaande getallen in";
